@@ -40,8 +40,7 @@ function generatePassword() {
 
 // create function for taking character type preferences 
 
-  
-    if (newPw) {
+   if (newPw) {
       newPw = [];
      
       // run the random character function over the value that user entered for pwLength
@@ -51,15 +50,11 @@ function generatePassword() {
       }
     }
     
-   
-    // returns the generated password without the commas included
+   // returns the generated password without the commas included
     return newPw.join("");
   }
   
-    
-  
-
-  function  promptUser() {
+    function  promptUser() {
 
     // ask if they want to include capital letters
     
@@ -88,7 +83,6 @@ function generatePassword() {
       return promptUser();
     }
   }
-
 
 // create object to hold pwCriteria 
 
@@ -127,9 +121,6 @@ function randomChar() {
 
   }
 
-
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -141,8 +132,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
