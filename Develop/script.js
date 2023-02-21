@@ -36,7 +36,7 @@ function generatePassword() {
     pwCriteria.pwLength = pwLength
   }
 
-  promptUser()
+  promptUser();
 
 // create function for taking character type preferences 
 
@@ -50,34 +50,45 @@ function generatePassword() {
         randomChar();
       }
     }
+    
+   
     // returns the generated password without the commas included
     return newPw.join("");
-  };
+  }
+  
+    
+  
 
   function  promptUser() {
 
     // ask if they want to include capital letters
+    
     var confirmCapital = confirm("Would you like capital letters in your pword?");
     pwCriteria.includeUpper = confirmCapital;
   
     // ask if they want to include lowercase letters
+    
     var confirmLower = confirm("How bout some lower case?");
     pwCriteria.includeLower = confirmLower;
   
     // ask if they want to include numbers
+    
     var confirmNum = confirm("How do you feel about some numbers?");
     pwCriteria.includeNum = confirmNum;
   
     // ask if they want to include special characters
+    
     var confirmSpecial = confirm("And lastly, special characters?");
     pwCriteria.includeSpecial = confirmSpecial;
   
     // check if the values all equal false - if so will rerun user prompts
+   
     if (pwCriteria.includeUpper === false && pwCriteria.includeLower === false && pwCriteria.includeNum === false && pwCriteria.includeSpecial === false) {
       alert("We really got to do this again? Alright then, damn.");
       return promptUser();
     }
-}
+  }
+
 
 // create object to hold pwCriteria 
 
@@ -89,8 +100,32 @@ var pwCriteria = {
   includeSpecial: null
 }
 
+function randomChar() {
+  // create an empty array that adds the specific character arrays from above only if their pwCriteria === true
+  var pwCharArray = [];
 
+  if (pwCriteria.includeUpper === true) {
+    pwCharArray = pwCharArray.concat(upperCase);
+  }
 
+  if (pwCriteria.includeLower === true) {
+    pwCharArray = pwCharArray.concat(lowerCase);
+  }
+
+  if (pwCriteria.includeNum === true) {
+    pwCharArray = pwCharArray.concat(numericList);
+  }
+
+  if (pwCriteria.includeSpecial === true) {
+    pwCharArray = pwCharArray.concat(specialChar);
+  }
+
+  // use math.random function to pick a random character from the array
+  var randomCharSelected = pwCharArray[Math.floor(Math.random() * pwCharArray.length)];
+
+  return newPw = newPw.concat(randomCharSelected);
+
+  }
 
 
 
@@ -107,5 +142,8 @@ function writePassword() {
 
 }
 
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
