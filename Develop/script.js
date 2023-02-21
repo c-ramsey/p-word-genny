@@ -16,23 +16,45 @@ var numericList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "=", ">", "<", "?", "@", "^", "_", "`", "{", "|", "{", "~"]
 
 // empty array to add pw to 
-var userPW = [];
+
+var newPw= [];
 
 // create function for taking user length preference 
 
 function generatePassword() {
 
-  var pwLength = parseInt(prompt("Set desired length for password between 8 and 128 characters."));
+  var pwLength = prompt("Set desired length for password between 8 and 128 characters.");
+
+  var placeHolder = document.querySelector("#password[placeholder]").textContent;
 
   if (pwLength < 8 || pwLength > 128 || isNaN(pwLength) === true) {
     alert("Nah dawg I said between 8 and 128! wyd??");
     return generatePassword();
   }
-}
+  
+  else {
+    pwCriteria.pwLength = pwLength
+  }
+
+  promptUser()
 
 // create function for taking character type preferences 
 
-  function promptUser() {
+  
+    if (newPw) {
+      newPw = [];
+     
+      // run the random character function over the value that user entered for pwLength
+     
+      for (var i = 0; i < pwLength; i++) {
+        randomChar();
+      }
+    }
+    // returns the generated password without the commas included
+    return newPw.join("");
+  };
+
+  function  promptUser() {
 
     // ask if they want to include capital letters
     var confirmCapital = confirm("Would you like capital letters in your pword?");
@@ -56,6 +78,19 @@ function generatePassword() {
       return promptUser();
     }
 }
+
+// create object to hold pwCriteria 
+
+var pwCriteria = {
+  pwLength: 0,
+  includeUpper: null,
+  includeLower: null,
+  includeNum: null,
+  includeSpecial: null
+}
+
+
+
 
 
 
