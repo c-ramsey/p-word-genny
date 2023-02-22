@@ -28,7 +28,7 @@ function generatePassword() {
   var placeHolder = document.querySelector("#password[placeholder]").textContent;
 
   if (pwLength < 8 || pwLength > 128 || isNaN(pwLength) === true) {
-    alert("Nah dawg I said between 8 and 128! wyd??");
+    alert("Nah dawg i said between 8 and 128! wyd??");
     return generatePassword();
   }
   
@@ -68,7 +68,7 @@ function generatePassword() {
   
     // ask if they want to include numbers
     
-    var confirmNum = confirm("How do you feel about some numbers?");
+    var confirmNum = confirm("Wow do you feel about some numbers?");
     pwCriteria.includeNum = confirmNum;
   
     // ask if they want to include special characters
