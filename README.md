@@ -12,13 +12,21 @@ Create an application that generates a random password for the user based on cri
 
 ## Deployed Webpage
 
-[Deployed Webpage]
+[Deployed Webpage] ()
 
 ## Screenshot
 
-![Screenshot] 
+![Screenshot](./dev/Password-Generator.png)
 
 ## Action Taken
+
+* Created arrays to hold the characters available to user for password generation
+* Wrote functions for taking user's character type and password length preferences
+* Wrote function to iterate over available character arrays and select at random based on user criterea to create password
+* Wrote fun prompts to guide user through random password generation process
+
+
+
 
 
 
