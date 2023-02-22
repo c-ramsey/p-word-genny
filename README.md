@@ -16,7 +16,7 @@ Create an application that generates a random password for the user based on cri
 
 ## Screenshot
 
-![Screenshot]
+![Screenshot] 
 
 ## Action Taken
 
